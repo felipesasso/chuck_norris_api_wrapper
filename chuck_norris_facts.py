@@ -3,14 +3,14 @@ from requests.exceptions import HTTPError
 from requests import Timeout
 
 def get_random_fact(category=None):
-    ''' Gets a random fact. If category is definided, it will return a
+    """ Gets a random fact. If category is definided, it will return a
         random fact under 'category'
 
         Args:
             category ('str'): Optional. Desired category
         Returns:
             dictionary: Json structured response data
-    '''
+    """
     if category:
         url = 'https://api.chucknorris.io/jokes/random?category={}'\
             .format(category)
@@ -30,11 +30,11 @@ def get_random_fact(category=None):
     return response.json()
 
 def get_available_categories():
-    ''' Returns available categories on API
+    """ Returns available categories on API
 
         Returns:
             list: Json structured response data
-    '''
+    """
 
     url = 'https://api.chucknorris.io/jokes/categories'
 
@@ -48,12 +48,12 @@ def get_available_categories():
     return response.json()
 
 def search_facts(query):
-    ''' Returns all the facts that matchs 'query'
+    """ Returns all the facts that matchs 'query'
         Args:
             query ('str'): Search query
         Returns:
             dict: Json structured response data containing result of search
-    '''
+    """
     url = 'https://api.chucknorris.io/jokes/search?query={}'.format(query)
 
     try:
