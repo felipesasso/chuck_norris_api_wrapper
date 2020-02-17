@@ -12,10 +12,10 @@ def get_random_fact(category=None):
             dictionary: Json structured response data
     '''
     if category:
-        url='https://api.chucknorris.io/jokes/random?category={}'\
+        url = 'https://api.chucknorris.io/jokes/random?category={}'\
             .format(category)
     else:
-        url='https://api.chucknorris.io/jokes/random'
+        url = 'https://api.chucknorris.io/jokes/random'
 
     try:
         response = requests.get(url)
